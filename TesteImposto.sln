@@ -21,6 +21,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Application Service Laye
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imposto.ApplicationService", "Imposto.Service\Imposto.ApplicationService.csproj", "{35D0626C-3D02-4E53-A97E-954A35CE77B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imposto.Core.Models", "Imposto.Core.Models\Imposto.Core.Models.csproj", "{D3223580-8DC8-4450-9BE4-0624DC1AF685}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. SQL Files", "5. SQL Files", "{7A635D9D-4277-42AD-BA56-EBDB5FDA627D}"
+	ProjectSection(SolutionItems) = preProject
+		SQL Files\P_GET_ITENS_PEDIDO_ICMS_IPI.sql = SQL Files\P_GET_ITENS_PEDIDO_ICMS_IPI.sql
+		SQL Files\P_NOTA_FISCAL.sql = SQL Files\P_NOTA_FISCAL.sql
+		SQL Files\P_NOTA_FISCAL_ITEM.sql = SQL Files\P_NOTA_FISCAL_ITEM.sql
+		SQL Files\T_NotaFiscal.sql = SQL Files\T_NotaFiscal.sql
+		SQL Files\T_NotaFiscalItem.sql = SQL Files\T_NotaFiscalItem.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +58,10 @@ Global
 		{35D0626C-3D02-4E53-A97E-954A35CE77B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35D0626C-3D02-4E53-A97E-954A35CE77B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35D0626C-3D02-4E53-A97E-954A35CE77B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3223580-8DC8-4450-9BE4-0624DC1AF685}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3223580-8DC8-4450-9BE4-0624DC1AF685}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3223580-8DC8-4450-9BE4-0624DC1AF685}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3223580-8DC8-4450-9BE4-0624DC1AF685}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,5 +72,6 @@ Global
 		{71A1986F-0FE6-4B4E-AF72-19330AD42163} = {3D378DEB-AB0F-4F8C-B263-D66827088EA1}
 		{04EF4CD3-BFA6-4032-8E09-792469C114D5} = {3D378DEB-AB0F-4F8C-B263-D66827088EA1}
 		{35D0626C-3D02-4E53-A97E-954A35CE77B7} = {3A516FB1-3030-48AD-A8A6-CF2D0E0229F5}
+		{D3223580-8DC8-4450-9BE4-0624DC1AF685} = {3D378DEB-AB0F-4F8C-B263-D66827088EA1}
 	EndGlobalSection
 EndGlobal

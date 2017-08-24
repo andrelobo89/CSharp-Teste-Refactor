@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Imposto.Core.Domain
+namespace Imposto.Core.Models
 {
     public class NotaFiscal
     {
@@ -10,7 +10,8 @@ namespace Imposto.Core.Domain
         public string NomeCliente { get; set; }
         public string EstadoDestino { get; set; }
         public string EstadoOrigem { get; set; }
-        public IEnumerable<NotaFiscalItem> ItensDaNotaFiscal { get; set; }
+
+        public List<NotaFiscalItem> ItensDaNotaFiscal { get; set; }
 
         public NotaFiscal()
         {

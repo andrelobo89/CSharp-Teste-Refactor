@@ -1,20 +1,22 @@
-﻿using Imposto.Core.Domain;
+﻿using System;
+using Imposto.Core.Models;
+using Imposto.Core.Domain.Services;
 
 namespace Imposto.ApplicationService
 {
-    public class NotaFiscalService : INotaFiscalService
+    public class NotaFiscalApplicationService : INotaFiscalApplicationService
     {
         #region Variables
 
-        private NotaFiscal _notaFiscal;
+        private INotaFiscalService _notaFiscalService;
 
         #endregion
 
         #region Constructor
 
-        public NotaFiscalService()
+        public NotaFiscalApplicationService()
         {
-            NotaFiscal _notaFiscal = new NotaFiscal();
+            _notaFiscalService = new NotalFiscalService();
         }
 
         #endregion
@@ -22,8 +24,16 @@ namespace Imposto.ApplicationService
         #region Methods
 
         public void GerarNotaFiscal(Pedido pedido)
-        {            
-            _notaFiscal.EmitirNotaFiscal(pedido);            
+        {
+            try
+            {
+                _notaFiscalService.EmitirNotaFiscal(pedido);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
         #endregion

@@ -1,23 +1,85 @@
-﻿using Imposto.Core.Service;
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using Imposto.Core.Domain;
+using Imposto.Core.Models;
+using Imposto.ApplicationService;
 
 namespace TesteImposto
 {
     public partial class FormImposto : Form
     {
+        #region Variables
+
+        private INotaFiscalApplicationService _INotaFiscalApplicationService;
         private Pedido pedido = new Pedido();
+
+        #endregion
+
+        #region Constructor
 
         public FormImposto()
         {
             InitializeComponent();
-            dataGridViewPedidos.AutoGenerateColumns = true;                       
-            dataGridViewPedidos.DataSource = GetTablePedidos();
-            ResizeColumns();
+
+            _INotaFiscalApplicationService = new NotaFiscalApplicationService();
+
+            CleanForm();
         }
 
+        #endregion
+
+        #region Control Events
+
+        private void buttonGerarNotaFiscal_Click(object sender, EventArgs e)
+        {
+            if (ValidateForm())
+            {
+                pedido.EstadoOrigem = cbxEstadoOrigem.SelectedItem.ToString();
+                pedido.EstadoDestino = cbxEstadoDestino.SelectedItem.ToString();
+                pedido.NomeCliente = textBoxNomeCliente.Text;
+
+                DataTable table = (DataTable)dataGridViewPedidos.DataSource;
+
+                foreach (DataRow row in table.Rows)
+                {
+                    pedido.ItensDoPedido.Add(
+                        new PedidoItem()
+                        {
+                            NomeProduto = row["NomeProduto"].ToString(),
+                            CodigoProduto = row["CodigoProduto"].ToString(),
+                            Brinde = row["Brinde"] == null ? false : true,
+                            ValorItemPedido = Convert.ToDouble(row["Valor"].ToString())
+                        });
+                }
+
+                try
+                {
+                    _INotaFiscalApplicationService.GerarNotaFiscal(pedido);
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocorreu um erro: " + ex.Message);
+                    return;
+                }
+
+                MessageBox.Show("Operação efetuada com sucesso");
+                CleanForm();
+            }
+        }
+
+        private void buttonLimparFormulario_Click(object sender, EventArgs e)
+        {
+            CleanForm();
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        /// <summary>
+        /// Organiza as colunas do grid de itens do pedido.
+        /// </summary>
         private void ResizeColumns()
         {
             double mediaWidth = dataGridViewPedidos.Width / dataGridViewPedidos.Columns.GetColumnCount(DataGridViewElementStates.Visible);
@@ -26,43 +88,66 @@ namespace TesteImposto
             {
                 var coluna = dataGridViewPedidos.Columns[i];
                 coluna.Width = Convert.ToInt32(mediaWidth);
-            }   
+            }
         }
 
+        /// <summary>
+        /// Cria o datatable para geração do grid de itens do pedido.
+        /// </summary>
+        /// <returns></returns>
         private object GetTablePedidos()
         {
             DataTable table = new DataTable("pedidos");
-            table.Columns.Add(new DataColumn("Nome do produto", typeof(string)));
-            table.Columns.Add(new DataColumn("Codigo do produto", typeof(string)));
+            table.Columns.Add(new DataColumn("NomeProduto", typeof(string)));
+            table.Columns.Add(new DataColumn("CodigoProduto", typeof(string)));
             table.Columns.Add(new DataColumn("Valor", typeof(decimal)));
             table.Columns.Add(new DataColumn("Brinde", typeof(bool)));
-                     
+
             return table;
         }
 
-        private void buttonGerarNotaFiscal_Click(object sender, EventArgs e)
-        {            
-            NotaFiscalService service = new NotaFiscalService();
-            pedido.EstadoOrigem = txtEstadoOrigem.Text;
-            pedido.EstadoDestino = txtEstadoDestino.Text;
-            pedido.NomeCliente = textBoxNomeCliente.Text;
+        /// <summary>
+        /// Limpa o formulário voltando ao seu estado inicial.
+        /// </summary>
+        private void CleanForm()
+        {
+            textBoxNomeCliente.Text = string.Empty;
+            cbxEstadoOrigem.SelectedIndex = 0;
+            cbxEstadoDestino.SelectedIndex = 0;
 
-            DataTable table = (DataTable)dataGridViewPedidos.DataSource;
+            dataGridViewPedidos.AutoGenerateColumns = true;
+            dataGridViewPedidos.DataSource = GetTablePedidos();
 
-            foreach (DataRow row in table.Rows)
+            ResizeColumns();
+        }
+
+        /// <summary>
+        /// Validação do formulário para ser executado antes de enviar as informações à Application Service.
+        /// </summary>
+        /// <returns></returns>
+        private bool ValidateForm()
+        {
+            if (string.IsNullOrWhiteSpace(textBoxNomeCliente.Text.ToString()))
             {
-                pedido.ItensDoPedido.Add(
-                    new PedidoItem()
-                    {
-                        Brinde = Convert.ToBoolean(row["Brinde"]),
-                        CodigoProduto =  row["Codigo do produto"].ToString(),
-                        NomeProduto = row["Nome do produto"].ToString(),
-                        ValorItemPedido = Convert.ToDouble(row["Valor"].ToString())            
-                    });
+                MessageBox.Show("Preencha o nome do cliente.");
+                return false;
             }
 
-            service.GerarNotaFiscal(pedido);
-            MessageBox.Show("Operação efetuada com sucesso");
+            if (cbxEstadoOrigem.SelectedIndex == 0)
+            {
+                MessageBox.Show("Selecione o estado de origem.");
+                return false;
+            }
+
+            if (cbxEstadoDestino.SelectedIndex == 0)
+            {
+                MessageBox.Show("Selecione o estado destino.");
+                return false;
+            }
+            
+            return true;
         }
+
+        #endregion        
     }
 }

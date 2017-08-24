@@ -1,4 +1,4 @@
-﻿namespace Imposto.Core.Domain
+﻿namespace Imposto.Core.Models
 {
     public class PedidoItem
     {

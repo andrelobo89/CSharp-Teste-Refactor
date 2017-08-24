@@ -40,9 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection\ConnectionManager.cs" />
     <Compile Include="INotaFiscalRepository.cs" />
     <Compile Include="NotaFiscalRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Imposto.Core.Models\Imposto.Core.Models.csproj">
+      <Project>{d3223580-8dc8-4450-9be4-0624dc1af685}</Project>
+      <Name>Imposto.Core.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

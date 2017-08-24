@@ -1,8 +1,8 @@
-﻿using Imposto.Core.Domain;
+﻿using Imposto.Core.Models;
 
 namespace Imposto.ApplicationService
 {
-    public interface INotaFiscalService
+    public interface INotaFiscalApplicationService
     {
         void GerarNotaFiscal(Pedido pedido);
     }

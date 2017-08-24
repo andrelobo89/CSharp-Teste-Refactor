@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Imposto.Core.Domain
+namespace Imposto.Core.Models
 {
     public class Pedido
     {
