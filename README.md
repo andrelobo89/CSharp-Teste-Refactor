@@ -2,4 +2,4 @@
 Refatoração de um projeto existente.
 
 # Estrutura do projeto
-![alt text](http://i67.tinypic.com/2ilojlh.jpg)
+![alt text](http://imgur.com/a/Avw0n)
