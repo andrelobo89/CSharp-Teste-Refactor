@@ -3,7 +3,7 @@ Refatoração de um projeto existente.
 
 <b>Instruções</b>
 
-Para atender o requisito N° 1, é necessário criar uma chave no registro do windows neste formato:
+Para atender o requisito N° 1, é necessário criar uma chave no registro do windows no seguinte caminho:
 
 -> Computador\HKEY_LOCAL_MACHINE\SOFTWARE\Teste Imposto
 
@@ -11,6 +11,7 @@ Para atender o requisito N° 1, é necessário criar uma chave no registro do wi
 
 -> Valor da chave: Qualquer diretório. Ex.: C:/NotasFiscais/
 
+<hr>
 
 <b>Objetivo do programa:</b>
 
