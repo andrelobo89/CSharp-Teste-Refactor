@@ -34,7 +34,9 @@ Abaixo uma breve descrição de como foi implementado cada item do documento de 
 
 <b>Estrutura da solução (resumida):</b>
 
+<div style="text-align:center">
 ![alt text](https://s28.postimg.org/jy3lovbzh/diagrama_imposto.jpg)
+</div>
 
 <hr>
 
