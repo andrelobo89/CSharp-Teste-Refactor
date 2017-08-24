@@ -3,7 +3,7 @@ Refactor de um projeto existente.
 
 <b>Instruções</b>
 
-Para atender o requisito N° 1, é necessário criar uma variável de sistema com as seguintes especificações:
+Para atender o requisito N° 1, é necessário criar uma variável de sistema com as seguintes especificações:<br>
 Nome: Path_Nota_Fiscal<br>
 Valor: "Qualquer diretório que deseja que seja salvo a nota fiscal."
 
@@ -25,7 +25,7 @@ A nota fiscal consiste em Nome do cliente, Estado de Origem, Estado Destino e it
 Abaixo uma breve descrição de como foi implementado cada item do documento de requisitos:
 
 <ul>
-    <li><b>1.</b>	Foi criado um método para geração de arquivo XML, utilizando a serialização de objetos para XML. O diretório onde são salvos os arquivos XML é definido nos registros do Windows, visando mais segurança, fazendo com que apenas o time de infra estrutura tenha acesso para alterar.</li>
+    <li><b>1.</b>	Foi criado um método para geração de arquivo XML, utilizando a serialização de objetos para XML. O diretório onde são salvos os arquivos XML é definido em variáveis de sistema do Windows, visando mais segurança, fazendo com que apenas o time de infra estrutura tenha acesso.</li>
     <li><b>2.</b>	Foram implementados dois métodos no Data Layer (Repository), um para cada chamada de procedure. Os mesmos são executados pela Domain Layer.</li>
     <li><b>3.</b>	Para atender esta solicitação foi alterada a model de Itens da nota fiscal, alterado a Domain Layer e Data Layer para receber as novas propriedades.</li>
     <li><b>4.</b>	Criado apenas a Stored Procedure. Segue anexo o arquivo .Sql no projeto.</li>
