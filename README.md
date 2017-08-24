@@ -23,4 +23,6 @@ Abaixo uma breve descrição de como foi implementado cada item do documento de 
 
 <b>Estrutura da solução (resumida):</b>
 
-<center>![alt text](https://s27.postimg.org/4z782rwpf/diagrama_imposto.jpg)</center>
+<center>
+![alt text](https://s27.postimg.org/4z782rwpf/diagrama_imposto.jpg)
+</center>
