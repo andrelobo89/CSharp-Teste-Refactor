@@ -30,14 +30,12 @@ namespace Imposto.Core.Domain.Services
         /// <param name="pedido">Classe pedido com as informações da nota fiscal.</param>
         public void EmitirNotaFiscal(Pedido pedido)
         {
-            var notaFiscal = new NotaFiscal()
-            {
-                NumeroNotaFiscal = new Random().Next(Int32.MaxValue),
-                Serie = new Random().Next(Int32.MaxValue),
-                NomeCliente = pedido.NomeCliente,
-                EstadoDestino = pedido.EstadoOrigem,
-                EstadoOrigem = pedido.EstadoDestino
-            };
+            var notaFiscal = new NotaFiscal();
+            notaFiscal.NumeroNotaFiscal = new Random().Next(Int32.MaxValue);
+            notaFiscal.Serie = new Random().Next(Int32.MaxValue);
+            notaFiscal.NomeCliente = pedido.NomeCliente;
+            notaFiscal.EstadoOrigem = pedido.EstadoOrigem;
+            notaFiscal.EstadoDestino = pedido.EstadoDestino;            
 
             foreach (PedidoItem itemPedido in pedido.ItensDoPedido)
             {

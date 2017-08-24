@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imposto.Core.Domain", "Impo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Application Service Layer", "2. Application Service Layer", "{3A516FB1-3030-48AD-A8A6-CF2D0E0229F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imposto.ApplicationService", "Imposto.Service\Imposto.ApplicationService.csproj", "{35D0626C-3D02-4E53-A97E-954A35CE77B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imposto.ApplicationService", "Imposto.ApplicationService\Imposto.ApplicationService.csproj", "{35D0626C-3D02-4E53-A97E-954A35CE77B7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imposto.Core.Models", "Imposto.Core.Models\Imposto.Core.Models.csproj", "{D3223580-8DC8-4450-9BE4-0624DC1AF685}"
 EndProject

@@ -2,7 +2,6 @@
 using System.IO;
 using System.Xml.Serialization;
 using Imposto.Core.Models;
-using Microsoft.Win32;
 
 namespace Imposto.Core.Domain.Extensions
 {

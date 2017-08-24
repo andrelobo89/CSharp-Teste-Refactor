@@ -7,8 +7,8 @@
     <ProjectGuid>{35D0626C-3D02-4E53-A97E-954A35CE77B7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Imposto.Service</RootNamespace>
-    <AssemblyName>Imposto.Service</AssemblyName>
+    <RootNamespace>Imposto.ApplicationService</RootNamespace>
+    <AssemblyName>Imposto.ApplicationService</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -84,7 +84,7 @@
       <Project>{d3223580-8dc8-4450-9be4-0624dc1af685}</Project>
       <Name>Imposto.Core.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Imposto.Service\Imposto.ApplicationService.csproj">
+    <ProjectReference Include="..\Imposto.ApplicationService\Imposto.ApplicationService.csproj">
       <Project>{35d0626c-3d02-4e53-a97e-954a35ce77b7}</Project>
       <Name>Imposto.ApplicationService</Name>
     </ProjectReference>
