@@ -40,4 +40,8 @@ Abaixo uma breve descrição de como foi implementado cada item do documento de 
 
 <b>Dúvidas? Estou a disposição!</b>
 
+<<<<<<< HEAD
 E-mail: lobo.andre89@gmail.com
+=======
+E-mail: lobo.andre89@gmail.com
+>>>>>>> 1f562c20653b0128f9b1ebbc13dbfb4e5581024d
