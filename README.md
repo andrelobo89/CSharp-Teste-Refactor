@@ -6,8 +6,11 @@ Refatoração de um projeto existente.
 Para atender o requisito N° 1, é necessário criar uma chave no registro do windows neste formato:
 
 -> Computador\HKEY_LOCAL_MACHINE\SOFTWARE\Teste Imposto
+
 -> Criar uma chave com o nome: Path_Nota_Fiscal
+
 -> Valor da chave: Qualquer diretório. Ex.: C:/NotasFiscais/
+
 
 <b>Objetivo do programa:</b>
 
@@ -32,8 +35,8 @@ Abaixo uma breve descrição de como foi implementado cada item do documento de 
 <b>Estrutura da solução (resumida):</b>
 
 
-![alt text](https://s27.postimg.org/4z782rwpf/diagrama_imposto.jpg)
+![alt text](https://s28.postimg.org/jy3lovbzh/diagrama_imposto.jpg)
 
-<b>Dúvida?</b>
+<b>Dúvidas?</b>
 
 E-mail: lobo.andre89@gmail.com
