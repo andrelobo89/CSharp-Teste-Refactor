@@ -17,6 +17,8 @@ Para atender o requisito N° 1, é necessário criar uma chave no registro do wi
 
 O objetivo da tela consiste em gerar uma nota fiscal com persistência no banco de dados e em arquivo XML. A nota fiscal consiste em Nome do cliente, Estado de Origem, Estado Destino e os itens da nota fiscal. 
 
+<hr>
+
 <b>Descrição das alterações:</b>
 
 Abaixo uma breve descrição de como foi implementado cada item do documento de requisitos:
@@ -33,10 +35,13 @@ Abaixo uma breve descrição de como foi implementado cada item do documento de 
     <li><b>9.</b>	Foi criado um teste unitário executando o único método na camada Application Service. Testando este método garante a funcionalidade de toda a estrutura.</li>
 </ul>
 
+<hr>
+
 <b>Estrutura da solução (resumida):</b>
 
-
 ![alt text](https://s28.postimg.org/jy3lovbzh/diagrama_imposto.jpg)
+
+<hr>
 
 <b>Dúvidas?</b>
 
