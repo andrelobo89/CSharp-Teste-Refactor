@@ -20,11 +20,14 @@ namespace Imposto.Core.Domain.Extensions
         {
             try
             {
-                string path = "C:/NotasFiscais/";
-                //string path = GetNotaFiscalPath();                
-                Directory.CreateDirectory(path);
+                string pathEnv = Environment.GetEnvironmentVariable("Path_Nota_Fiscal", EnvironmentVariableTarget.Machine);
 
-                string file = path + "nota_fiscal_" + notaFiscal.NumeroNotaFiscal + ".xml";
+                if (string.IsNullOrWhiteSpace(pathEnv))
+                    pathEnv = "C:/NotasFiscais/";
+
+                Directory.CreateDirectory(pathEnv);
+
+                string file = pathEnv + "nota_fiscal_" + notaFiscal.NumeroNotaFiscal + ".xml";
 
                 var serializer = new XmlSerializer(typeof(NotaFiscal));
 
@@ -38,25 +41,6 @@ namespace Imposto.Core.Domain.Extensions
             catch (Exception ex)
             {
                 throw ex;
-            }
-        }
-
-        /// <summary>
-        /// Método que retorna o caminho onde é salvo as notas fiscais em XML.
-        /// </summary>
-        /// <returns></returns>
-        private static string GetNotaFiscalPath()
-        {
-            RegistryKey rk = Registry.LocalMachine;
-            RegistryKey sk1 = rk.OpenSubKey("SOFTWARE\\TesteImposto");
-
-            if (sk1 == null)
-            {
-                throw new Exception("Por favor, solicitar a configuração do diretório de notas fiscais.");
-            }
-            else
-            {
-                return (string)sk1.GetValue("Path_Nota_Fiscal");
             }
         }
     }

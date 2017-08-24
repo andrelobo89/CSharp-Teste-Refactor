@@ -184,7 +184,7 @@
             this.buttonLimparFormulario.Location = new System.Drawing.Point(771, 442);
             this.buttonLimparFormulario.Name = "buttonLimparFormulario";
             this.buttonLimparFormulario.Size = new System.Drawing.Size(127, 23);
-            this.buttonLimparFormulario.TabIndex = 7;
+            this.buttonLimparFormulario.TabIndex = 5;
             this.buttonLimparFormulario.Text = "Limpar formulário";
             this.buttonLimparFormulario.UseVisualStyleBackColor = true;
             this.buttonLimparFormulario.Click += new System.EventHandler(this.buttonLimparFormulario_Click);

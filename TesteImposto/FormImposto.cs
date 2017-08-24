@@ -47,15 +47,14 @@ namespace TesteImposto
                         {
                             NomeProduto = row["NomeProduto"].ToString(),
                             CodigoProduto = row["CodigoProduto"].ToString(),
-                            Brinde = row["Brinde"] == null ? false : true,
+                            Brinde = row["Brinde"].ToString() == "" ? false : true,
                             ValorItemPedido = Convert.ToDouble(row["Valor"].ToString())
                         });
                 }
 
                 try
                 {
-                    _INotaFiscalApplicationService.GerarNotaFiscal(pedido);
-                    
+                    _INotaFiscalApplicationService.GerarNotaFiscal(pedido);                    
                 }
                 catch (Exception ex)
                 {
@@ -100,7 +99,7 @@ namespace TesteImposto
             DataTable table = new DataTable("pedidos");
             table.Columns.Add(new DataColumn("NomeProduto", typeof(string)));
             table.Columns.Add(new DataColumn("CodigoProduto", typeof(string)));
-            table.Columns.Add(new DataColumn("Valor", typeof(decimal)));
+            table.Columns.Add(new DataColumn("Valor", typeof(string)));
             table.Columns.Add(new DataColumn("Brinde", typeof(bool)));
 
             return table;
@@ -144,7 +143,41 @@ namespace TesteImposto
                 MessageBox.Show("Selecione o estado destino.");
                 return false;
             }
-            
+
+            var table = (DataTable)dataGridViewPedidos.DataSource;
+            if (table.Rows.Count == 0)
+            {
+                MessageBox.Show("Por favor, inserir ao menos 1 item na nota fiscal.");
+                return false;
+            }
+            else
+            {
+                int index = 1;
+                foreach (DataRow row in table.Rows)
+                {
+                    if (string.IsNullOrWhiteSpace(row["NomeProduto"].ToString()))
+                    {
+                        MessageBox.Show(string.Format("Informe o nome do produto no item da linha {0}.", index));
+                        return false;
+                    }
+
+                    if (string.IsNullOrWhiteSpace(row["CodigoProduto"].ToString()))
+                    {
+                        MessageBox.Show(string.Format("Informe o código do produto no item da linha {0}.", index));
+                        return false;
+                    }
+
+                    double valor;
+                    if (!Double.TryParse(row["Valor"].ToString(), out valor))
+                    {
+                        MessageBox.Show(string.Format("Valor não informado ou inválido do item da linha {0}.", index));
+                        return false;
+                    }
+
+                    index++;
+                }
+            }
+
             return true;
         }
 
