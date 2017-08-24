@@ -1,7 +1,7 @@
 # CSharp - Teste Refactor
 Refatoração de um projeto existente.
 
-<b>Objetivo do programa:<b>
+<b>Objetivo do programa:</b>
 
 O objetivo da tela consiste em gerar uma nota fiscal com persistência no banco de dados e em arquivo XML. A nota fiscal consiste em Nome do cliente, Estado de Origem, Estado Destino e os itens da nota fiscal. 
 
