@@ -4,8 +4,8 @@ Refactor de um projeto existente.
 <b>Instruções</b>
 
 Para atender o requisito N° 1, é necessário criar uma variável de sistema com as seguintes especificações:<br>
-Nome: Path_Nota_Fiscal<br>
-Valor: "Qualquer diretório que deseja que seja salvo a nota fiscal."
+<b>Nome:</b> Path_Nota_Fiscal<br>
+<b>Valor:</b> "Qualquer diretório que deseja que seja salvo a nota fiscal."
 
 Exemplo:
 
