@@ -25,7 +25,7 @@ Abaixo uma breve descrição de como foi implementado cada item do documento de 
     <li><b>4.</b>	Criado apenas a Stored Procedure. Segue anexo o arquivo .Sql no projeto.</li>
     <li><b>5.</b>	Este requisito foi ignorado, pois no sistema já constava CFOP 6.006 para o estado de origem SP e destino RO.</li>
     <li><b>6.</b>	Alterados os campos Estado de Origem e destinos de campo texto para campo de seleção, garantindo que o usuário não possa informar dados inválidos. Alterado a ordem (TabIndex) de sequência dos campos. Adicionado validação dos campos com mensagens amigáveis. Ao salvar com sucesso os campos são limpos, ao salvar e ocorrer um erro, os dados são mantidos e é exibido uma mensagem.</li>
-    <li><b>7.</b>	Utilizado os conceitos SOLID (básico) para aplicar esta solução.</li>
+    <li><b>7.</b>	Utilizado conceitos SOLID (básico) para aplicar esta solução.</li>
     <li><b>8.</b>	Foi alterada a estrutura da solução separando em projetos bem definidos e com responsabilidades únicas. Abaixo segue um diagrama resumido de como está a restruturação da solução.</li>
     <li><b>9.</b>	Foi criado um teste unitário executando o único método da camada Application Service. Testando este método garante a funcionalidade de toda a estrutura.</li>
 </ul>
