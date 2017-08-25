@@ -40,7 +40,7 @@ Abaixo uma breve descrição de como foi implementado cada item do documento de 
 
 <b>Estrutura da solução (resumida):</b>
 
-<img align="center" src="https://s28.postimg.org/jy3lovbzh/diagrama_imposto.jpg" alt="Estrutura do projeto">
+<img align="center" src="https://s28.postimg.org/w1n61184t/diagrama_imposto.jpg" alt="Estrutura do projeto">
 
 <hr>
 
