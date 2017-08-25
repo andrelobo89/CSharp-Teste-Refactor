@@ -49,7 +49,7 @@ namespace Imposto.Core.Data
         }
 
         /// <summary>
-        /// Persiste no banco de dados informações
+        /// Persiste no banco de dados informações.
         /// </summary>
         /// <param name="notaFiscalItem"></param>
         public void GravarItemNotaFiscal(NotaFiscalItem notaFiscalItem)

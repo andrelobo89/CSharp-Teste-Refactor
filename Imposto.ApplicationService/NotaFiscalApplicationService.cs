@@ -23,6 +23,10 @@ namespace Imposto.ApplicationService
 
         #region Methods
 
+        /// <summary>
+        /// Método responsável por persistir a nota fiscal no banco de dados e no arquivo XML.
+        /// </summary>
+        /// <param name="pedido"></param>
         public void GerarNotaFiscal(Pedido pedido)
         {
             try
@@ -32,8 +36,7 @@ namespace Imposto.ApplicationService
             catch (Exception ex)
             {
                 throw ex;
-            }
-            
+            }            
         }
 
         #endregion

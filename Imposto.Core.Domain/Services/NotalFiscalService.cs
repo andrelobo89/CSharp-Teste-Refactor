@@ -9,8 +9,7 @@ namespace Imposto.Core.Domain.Services
     {
         #region Variables
 
-        private INotaFiscalRepository _INotaFiscalRepository;
-        private INotaFiscalItemRepository _INotaFiscalItemRepository;
+        private INotaFiscalRepository _INotaFiscalRepository;        
 
         #endregion
 
@@ -18,8 +17,7 @@ namespace Imposto.Core.Domain.Services
 
         public NotalFiscalService()
         {
-            _INotaFiscalRepository = new NotaFiscalRepository();
-            _INotaFiscalItemRepository = new NotaFiscalItemRepository();
+            _INotaFiscalRepository = new NotaFiscalRepository();            
         }
 
         #endregion
@@ -105,7 +103,7 @@ namespace Imposto.Core.Domain.Services
                     foreach (var item in notaFiscal.ItensDaNotaFiscal)
                     {
                         item.IdNotaFiscal = idNota;
-                        _INotaFiscalItemRepository.GravarItemNotaFiscal(item);
+                        _INotaFiscalRepository.GravarItemNotaFiscal(item);
                     }
                 }                
             }
