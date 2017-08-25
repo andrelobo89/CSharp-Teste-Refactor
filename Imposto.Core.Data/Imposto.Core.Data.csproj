@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\ConnectionManager.cs" />
+    <Compile Include="INotaFiscalItemRepository.cs" />
     <Compile Include="INotaFiscalRepository.cs" />
+    <Compile Include="NotaFiscalItemRepository.cs" />
     <Compile Include="NotaFiscalRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

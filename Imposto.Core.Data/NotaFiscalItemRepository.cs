@@ -9,44 +9,9 @@ namespace Imposto.Core.Data
     /// <summary>
     /// Classe responsável por fazer a persistência de NotaFiscal
     /// </summary>
-    public class NotaFiscalRepository : INotaFiscalRepository
+    public class NotaFiscalItemRepository : INotaFiscalItemRepository
     {
         #region Public Methods
-
-        /// <summary>
-        /// Persiste no banco de dados informações de uma nota fiscal.
-        /// </summary>
-        /// <param name="notaFiscal"></param>
-        /// <returns></returns>
-        public int GravarNotaFiscal(NotaFiscal notaFiscal)
-        {
-            string procedureName = "P_NOTA_FISCAL";
-
-            using (var connection = new SqlConnection(ConnectionManager.GetConnectionString))
-            {
-                connection.Open();
-
-                using (var command = new SqlCommand(procedureName, connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.CommandTimeout = 60;
-
-                    var id = new SqlParameter("@pId", notaFiscal.Id);
-                    id.Direction = ParameterDirection.InputOutput;
-
-                    command.Parameters.Add(id);
-                    command.Parameters.Add(new SqlParameter("@pNumeroNotaFiscal ", notaFiscal.NumeroNotaFiscal));
-                    command.Parameters.Add(new SqlParameter("@pSerie", notaFiscal.Serie));
-                    command.Parameters.Add(new SqlParameter("@pNomeCliente", notaFiscal.NomeCliente));
-                    command.Parameters.Add(new SqlParameter("@pEstadoDestino", notaFiscal.EstadoDestino));
-                    command.Parameters.Add(new SqlParameter("@pEstadoOrigem", notaFiscal.EstadoOrigem));
-
-                    command.ExecuteNonQuery();
-
-                    return Convert.ToInt32(command.Parameters["@pId"].Value);
-                }
-            }            
-        }
 
         /// <summary>
         /// Persiste no banco de dados informações
